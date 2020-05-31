@@ -1,0 +1,2 @@
+module VetrinaHelper
+end

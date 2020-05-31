@@ -1,0 +1,21 @@
+<h1>Vetrina</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th> | Nome Prodotto |</th>
+    <th> | prezzo Prodotto | </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @prodotti.each do |prodotto| %>
+    <tr>
+      <td> <%= prodotto.nome %> </td>
+      <td> <%= prodotto.prezzo %></td>
+      <td> <%= button_to 'aggiungi', linea_ordini_path(prodotto_id: prodotto) %> </td>
+    </tr>
+
+  <% end %>
+
+  </tbody>
+</table>

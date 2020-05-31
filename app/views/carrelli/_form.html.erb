@@ -1,0 +1,17 @@
+<%= form_with(model: carrello, local: true) do |form| %>
+  <% if carrello.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(carrello.errors.count, "error") %> prohibited this carrello from being saved:</h2>
+
+      <ul>
+        <% carrello.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
