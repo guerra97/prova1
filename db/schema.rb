@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_30_140910) do
+ActiveRecord::Schema.define(version: 2020_06_09_125127) do
 
   create_table "carrelli", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_05_30_140910) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "qta"
+    t.integer "quantity", default: 1
     t.index ["carrello_id"], name: "index_linea_ordini_on_carrello_id"
     t.index ["prodotto_id"], name: "index_linea_ordini_on_prodotto_id"
   end
