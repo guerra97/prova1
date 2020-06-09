@@ -17,7 +17,7 @@
       <tr>
         <td><%= linea_ordine.prodotto_id %></td>
         <td><%= linea_ordine.carrello_id %></td>
-        <td> <%= linea_ordine.qta %> </td>
+        <td><%= linea_ordine.quantity %> </td>
         <td><%= link_to 'Show', linea_ordine %></td>
         <td><%= link_to 'Edit', edit_linea_ordine_path(linea_ordine) %></td>
         <td><%= link_to 'Destroy', linea_ordine, method: :delete, data: { confirm: 'Are you sure?' } %></td>

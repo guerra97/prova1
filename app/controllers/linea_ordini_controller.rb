@@ -27,12 +27,11 @@ class LineaOrdiniController < ApplicationController
   # POST /linea_ordini.json
   def create
     prodotto = Prodotto.find(params[:prodotto_id])
-    @linea_ordine = @carrello.linea_ordini.build(prodotto: prodotto)
+    @linea_ordine = @carrello.addProdotto(prodotto)
 
     respond_to do |format|
       if @linea_ordine.save
-        format.html { redirect_to @linea_ordine.prodotto,
-                                  notice: 'Linea ordine was successfully created.' }
+        format.html { redirect_to @linea_ordine.prodotto, notice: 'Linea ordine was successfully created.' }
         format.json { render :show, status: :created, location: @linea_ordine }
       else
         format.html { render :new}
