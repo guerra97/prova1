@@ -75,3 +75,7 @@ class LineaOrdiniController < ApplicationController
       params.require(:linea_ordine).permit(:prodotto_id, :carrello_id)
     end
 end
+
+
+
+

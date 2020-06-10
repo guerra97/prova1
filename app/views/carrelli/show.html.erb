@@ -1,4 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<h2> il tuo carrello </h2>
+
+<table>
+  <% @carrello.linea_ordini.each do |elemento| %>
+    <tr>
+      <td> <%= elemento.quantity %> &times </td>
+      <td> <%= elemento.prodotto.nome %> </td>
+      <td class=" prezzo elemento " > <%= number_to_currency(elemento.prezzo_totale) %></td>
+    </tr>
+  <% end %>
+    <tr>
+      <td> prezzo Totale : <%= @carrello.prezzo_ordine %></td>
+    </tr>
+
+</table>
+
 <%= link_to 'Edit', edit_carrello_path(@carrello) %> |
 <%= link_to 'Back', carrelli_path %>

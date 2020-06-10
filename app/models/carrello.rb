@@ -13,4 +13,8 @@ class Carrello < ApplicationRecord
     ordine_corrente
   end
 
+  def prezzo_ordine
+    linea_ordini.to_a.sum {|elemento| elemento.prezzo_totale }
+  end
+
 end
